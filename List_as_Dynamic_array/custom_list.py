@@ -8,4 +8,11 @@ class CustomList:
     
     def __create_array(self, capacity):
         #Create a new array with given capacity
-        return (ctypes.py_object * capacity)
+        return (ctypes.py_object * capacity)()
+    
+    def __resize(self, new_capacity):
+        new_array = self.__create_array(new_capacity)
+        
+    def append(self, item):
+        if self.size == self.capacity:
+            self.__resize(2*self.capacity)
