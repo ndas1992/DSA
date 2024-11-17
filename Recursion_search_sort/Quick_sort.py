@@ -1,11 +1,12 @@
 def partition_function(arr, s, e):
-    pivot = s
+    position = s
 
     for i in range(s, e):
         if arr[i]<arr[e]:
-            pivot = pivot+1
-    arr[pivot], arr[e] = arr[e], arr[pivot]
-
+            position = position+1
+    arr[position], arr[e] = arr[e], arr[position]
+    
+    pivot = position
     i = s
     j = e
     while i<pivot or j>pivot:
